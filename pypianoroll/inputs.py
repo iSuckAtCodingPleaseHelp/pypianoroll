@@ -40,6 +40,7 @@ def load(path: Union[str, Path]) -> Multitrack:
 
     """
     with np.load(path) as loaded:
+        print(loaded)
         if "info.json" not in loaded:
             raise RuntimeError("Cannot find `info.json` in the NPZ file.")
 

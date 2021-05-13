@@ -64,8 +64,8 @@ def save(
 
     """
     info_dict: Dict = {
-        "resolution": multitrack.resolution,
-        "name": multitrack.name,
+        "resolution": int(multitrack.resolution),
+        "name": str(multitrack.name),
     }
 
     array_dict = {}

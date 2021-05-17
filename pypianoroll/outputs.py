@@ -85,7 +85,7 @@ def save(
         }
 
     if compressed:
-        np.savez_compressed(path, **array_dict)
+        np.savez_compressed(path, **array_dict, shape=path.shape, nonzero=path.nonzero())
         compression = zipfile.ZIP_DEFLATED
         with zipfile.ZipFile(path+'.npz', "a") as zip_file:
             zip_file.writestr("info.json", json.dumps(info_dict), compression)
